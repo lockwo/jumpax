@@ -1,0 +1,3 @@
+# solve
+
+::: jumpax.solve

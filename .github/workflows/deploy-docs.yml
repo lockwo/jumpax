@@ -1,0 +1,53 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ".[docs]"
+      # https://github.com/mhausenblas/mkdocs-deploy-gh-pages/blob/master/action.sh
+      - name: Build docs
+        run: |
+          mkdocs build
+          mkdocs build  # twice, see https://github.com/patrick-kidger/pytkdocs_tweaks
+
+          remote_repo="https://x-access-token:${GITHUB_TOKEN}@${GITHUB_DOMAIN:-"github.com"}/${GITHUB_REPOSITORY}.git"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+          if ! git config --get user.name; then
+              git config --global user.name "${GITHUB_ACTOR}"
+          fi
+
+          if ! git config --get user.email; then
+              git config --global user.email "${GITHUB_ACTOR}@users.noreply.${GITHUB_DOMAIN:-"github.com"}"
+          fi
+
+          git remote rm origin
+          git remote add origin "${remote_repo}"
+
+          mkdocs gh-deploy --config-file mkdocs.yml --force
