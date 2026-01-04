@@ -154,10 +154,10 @@ class AbstractJumpProblem(AbstractStrictModule, Generic[_Rate]):
         raise NotImplementedError
 
 
-_ScalarRate: TypeAlias = Float[Array, ""]
+_Rates: TypeAlias = Float[Array, " R"]
 
 
-class ConstantRateJump(AbstractJumpProblem[_ScalarRate]):
+class ConstantRateJump(AbstractJumpProblem[_Rates]):
     r"""
     A jump process with a rate $\lambda(u)$ that depends only on the current state.
 
@@ -166,10 +166,10 @@ class ConstantRateJump(AbstractJumpProblem[_ScalarRate]):
     between jumps.
     """
 
-    rate_fn: Callable[[RealScalarLike, U, Args], _ScalarRate]
+    rate_fn: Callable[[RealScalarLike, U, Args], _Rates]
     affect_fn: AbstractAffect
 
-    def rate(self, t: RealScalarLike, u: U, args: Args) -> _ScalarRate:
+    def rate(self, t: RealScalarLike, u: U, args: Args) -> _Rates:
         """Evaluate the rate function."""
         return self.rate_fn(t, u, args)
 
@@ -216,7 +216,7 @@ def _massaction_comb(
     return jnp.where(valid, c, jnp.zeros_like(c))
 
 
-class MassActionJump(AbstractJumpProblem[_ScalarRate]):
+class MassActionJump(AbstractJumpProblem[_Rates]):
     r"""
     Array-based mass-action reaction system.
 
@@ -295,7 +295,7 @@ class MassActionJump(AbstractJumpProblem[_ScalarRate]):
         return self.net_stoich
 
 
-class VariableRateJump(AbstractJumpProblem[_ScalarRate]):
+class VariableRateJump(AbstractJumpProblem[_Rates]):
     r"""
     A jump process with a rate $\lambda(t, u)$ that depends on time and state.
 
@@ -304,11 +304,11 @@ class VariableRateJump(AbstractJumpProblem[_ScalarRate]):
     continuously evolving dynamics.
     """
 
-    rate_fn: Callable[[RealScalarLike, U, Args], _ScalarRate]
+    rate_fn: Callable[[RealScalarLike, U, Args], _Rates]
     affect_fn: AbstractAffect
     leap_delta_fn: Callable[[RealScalarLike, U, Args], U] | None = None
 
-    def rate(self, t: RealScalarLike, u: U, args: Args) -> _ScalarRate:
+    def rate(self, t: RealScalarLike, u: U, args: Args) -> _Rates:
         """Evaluate the rate function."""
         return self.rate_fn(t, u, args)
 
