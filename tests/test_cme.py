@@ -68,7 +68,7 @@ class TestBirthDeathSteadyState(unittest.TestCase):
 
     def test_steady_state_is_poisson(self):
         lam, mu = 5.0, 0.5
-        expected_mean = lam / mu  # Poisson parameter = λ/μ
+        expected_mean = lam / mu  # Poisson parameter = lam/mu
 
         problem = make_birth_death_problem(lam, mu)
         max_n = 40
