@@ -92,9 +92,11 @@ nav:
         - Poisson Process: 'examples/01_poisson_process.ipynb'
         - Gillespie Methods: 'examples/02_continuous_time_gillespie_methods.ipynb'
         - Jump Diffusion: 'examples/03_jump_diffusion.ipynb'
+        - Exact CME Solver: 'examples/04_exact_cme_solver.ipynb'
     - Basic API:
         - 'api/solve.md'
         - 'api/jumps.md'
         - 'api/aggregators.md'
+        - 'api/cme.md'
         - 'api/solution.md'
         - 'api/save.md'

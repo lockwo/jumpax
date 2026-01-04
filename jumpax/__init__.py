@@ -6,6 +6,12 @@ from ._aggregators import (
     SimpleTauLeaping as SimpleTauLeaping,
 )
 from ._aggregators.ssa import SSA as SSA
+from ._cme import (
+    build_generator as build_generator,
+    CMEState as CMEState,
+    marginal_distribution as marginal_distribution,
+    solve_cme as solve_cme,
+)
 from ._jumps import (
     AbstractAffect as AbstractAffect,
     AbstractJumpProblem as AbstractJumpProblem,

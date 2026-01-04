@@ -56,26 +56,25 @@ print(f"Final population: {us[-1]}")
 
 ## Future development ideas
 
-- diffrax style success/fail integration
-- ts logging/saveat
-- expand test coverage/quality
-- Finite space Q matrix simulator
-- Discrete diffusion example
-- Operator splitting    
-- Generator matching example
-- allow diffrax dense solution?
-- add citations for methods in docstrings
-- add better math to solver docstrings
-- any cleverness with array refs possible?
-- Add a common backbone for HybridSSA and HazardSSA since they share similar subroutines
-- Bounded tau-leaping ([Soloveichik 2008](https://arxiv.org/abs/0803.1030))
-- Postleap check tau-leaping ([Anderson 2008](https://doi.org/10.1063/1.2819665))
-- Implicit tau-leaping ([Rathinam et al. 2003](https://doi.org/10.1063/1.1613254))
-- Multilevel Monte Carlo ([Anderson & Higham 2012](https://doi.org/10.1137/110839546))
-- Adaptive tau selection ([Cao et al. 2006](https://doi.org/10.1063/1.2159468))
-- Richardson extrapolation tau-leaping ([Li 2007](https://doi.org/10.1063/1.2789402))
-- pypi
-- wrapper like gillespy2?
+- [ ] diffrax style success/fail integration
+- [ ] ts logging/saveat
+- [ ] expand test coverage/quality
+- [x] Finite space Q matrix simulator
+- [ ] Discrete diffusion example
+- [ ] Operator splitting    
+- [ ] Generator matching example
+- [ ] allow diffrax dense solution?
+- [ ] add citations for methods in docstrings
+- [ ] add better math to solver docstrings
+- [ ] Add a common backbone for HybridSSA and HazardSSA since they share similar subroutines
+- [ ] Bounded tau-leaping ([Soloveichik 2008](https://arxiv.org/abs/0803.1030))
+- [ ] Postleap check tau-leaping ([Anderson 2008](https://doi.org/10.1063/1.2819665))
+- [ ] Implicit tau-leaping ([Rathinam et al. 2003](https://doi.org/10.1063/1.1613254))
+- [ ] Multilevel Monte Carlo ([Anderson & Higham 2012](https://doi.org/10.1137/110839546))
+- [ ] Adaptive tau selection ([Cao et al. 2006](https://doi.org/10.1063/1.2159468))
+- [ ] Richardson extrapolation tau-leaping ([Li 2007](https://doi.org/10.1063/1.2789402))
+- [ ] pypi
+- [ ] wrapper like gillespy2?
 
 
 ## Other resources:
@@ -90,14 +89,14 @@ print(f"Final population: {us[-1]}")
 
 If you found this library useful in academic research, please cite: 
 
-<!-- ```bibtex
+```bibtex
 @software{lockwood2025jumpax,
   title = {jumpax: Jump Processes in JAX},
   author = {Owen Lockwood},
   url = {https://github.com/lockwo/jumpax},
   doi = {},
 }
-``` -->
+```
 
 (Also consider starring the project on GitHub.)
 

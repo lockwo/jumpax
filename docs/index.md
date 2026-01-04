@@ -48,14 +48,14 @@ print(f"Final population: {us[-1]}")
 
 If you found this library useful in academic research, please cite: 
 
-<!-- ```bibtex
+```bibtex
 @software{lockwood2025jumpax,
   title = {jumpax: Jump Processes in JAX},
   author = {Owen Lockwood},
   url = {https://github.com/lockwo/jumpax},
   doi = {},
 }
-``` -->
+```
 
 (Also consider starring the project on GitHub.)
 
