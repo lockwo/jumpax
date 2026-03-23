@@ -28,6 +28,8 @@ jobs:
       - name: Run styles & lint check
         run: |
           pip install .[testing]
-          ruff format --check jumpax/ tests/ examples/
-          ruff check jumpax/ tests/ examples/
+          pip install black flake8 isort
+          black --check jumpax/ tests/ examples/
+          isort --check jumpax/ tests/ examples/
+          flake8 jumpax/ tests/ examples/
           pyright jumpax/
