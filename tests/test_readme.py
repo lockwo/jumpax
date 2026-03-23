@@ -4,6 +4,7 @@ import unittest
 
 import jax.numpy as jnp
 import jax.random as jr
+
 import jumpax as jpx
 
 

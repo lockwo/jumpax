@@ -10,7 +10,6 @@ from jaxtyping import Array, Float, Int, Key
 from ._custom_meta import AbstractStrictModule
 from ._custom_types import Args, JumpState, Rate, RealScalarLike, U
 
-
 _Rate = TypeVar("_Rate", bound=Rate)
 _JumpState = TypeVar("_JumpState", bound=JumpState)
 
@@ -197,10 +196,10 @@ class ConstantRateJump(AbstractJumpProblem[_Rates]):
 
 
 def _massaction_comb(
-    n: Float[Array, "*shape"],
-    k: Int[Array, "*shape"],
-    lgamma_k_plus_1: Float[Array, "*shape"],
-) -> Float[Array, "*shape"]:
+    n: Float[Array, " *shape"],
+    k: Int[Array, " *shape"],
+    lgamma_k_plus_1: Float[Array, " *shape"],
+) -> Float[Array, " *shape"]:
     r"""
     Compute the binomial coefficient $\binom{n}{k}$ using precomputed log-factorials.
 
