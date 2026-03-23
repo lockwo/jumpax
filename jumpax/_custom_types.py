@@ -9,7 +9,6 @@ from jaxtyping import (
     Shaped,
 )
 
-
 if TYPE_CHECKING:
     RealScalarLike = bool | int | float | Array | np.ndarray
 else:

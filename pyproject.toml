@@ -53,6 +53,9 @@ docs = [
 [tool.setuptools]
 packages = { find = { include = ["jumpax", "jumpax.*"] } }
 
+[tool.black]
+target-version = ["py312"]
+
 [tool.isort]
 profile = "black"
 combine_as_imports = true

@@ -4,7 +4,6 @@ from dataclasses import dataclass
 import equinox as eqx
 import ihoop
 
-
 try:
 
     class _StrictEqxMeta(ihoop.strict._StrictMeta, eqx._module._module._ModuleMeta):

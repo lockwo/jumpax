@@ -7,7 +7,6 @@ from jaxtyping import Array, Bool, Int, Key
 from .._custom_meta import AbstractStrictModule
 from .._custom_types import Args, Info, JumpState, RealScalarLike, SolverState, U
 
-
 _SolverState = TypeVar("_SolverState", bound=SolverState)
 
 

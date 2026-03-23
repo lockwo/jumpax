@@ -1,8 +1,9 @@
 import unittest
 
 import jax.numpy as jnp
-import jumpax as jx
 from jax.scipy.special import gammaln
+
+import jumpax as jx
 
 
 def poisson_pmf(k, lam):

@@ -18,7 +18,7 @@ jobs:
       max-parallel: 4
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.10"]
+        python-version: ["3.12"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up python ${{ matrix.python-version }}
@@ -28,7 +28,7 @@ jobs:
       - name: Run styles & lint check
         run: |
           pip install .[testing]
-          pip install black flake8 isort
+          pip install "black[jupyter]" flake8 isort
           black --check jumpax/ tests/ examples/
           isort --check jumpax/ tests/ examples/
           flake8 jumpax/ tests/ examples/
