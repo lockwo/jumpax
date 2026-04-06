@@ -4,8 +4,8 @@ import time
 
 import jax
 import jax.numpy as jnp
-import jumpax as jx
 
+import jumpax as jx
 
 try:
     jax.devices("gpu")
@@ -111,7 +111,7 @@ for n_traj in range(1, 102, 10):
         jax.vmap(
             lambda k: jx.solve(maj, solver, save, u0, t0=t0, t1=t1, args=None, key=k)
         ),
-        device=jax.devices("cpu")[0]
+        device=jax.devices("cpu")[0],
     )
 
     start_time = time.time()
@@ -142,11 +142,14 @@ for n_traj in range(1, 102, 10):
         elapsed_gpu_no_compile = time.time() - start_time
         results_gpu_no_compile.append([n_traj, elapsed_gpu_no_compile])
         print(
-            f"n={n_traj}, with compile: {elapsed_with_compile:.4f}s, no compile: {elapsed_no_compile:.4f}s, gpu no compile: {elapsed_gpu_no_compile:.4f}s"
+            f"n={n_traj}, with compile: {elapsed_with_compile:.4f}s, "
+            f"no compile: {elapsed_no_compile:.4f}s, "
+            f"gpu no compile: {elapsed_gpu_no_compile:.4f}s"
         )
     else:
         print(
-            f"n={n_traj}, with compile: {elapsed_with_compile:.4f}s, no compile: {elapsed_no_compile:.4f}s"
+            f"n={n_traj}, with compile: {elapsed_with_compile:.4f}s, "
+            f"no compile: {elapsed_no_compile:.4f}s"
         )
 
 os.makedirs("results", exist_ok=True)

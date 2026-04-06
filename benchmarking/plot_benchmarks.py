@@ -5,7 +5,6 @@ import numpy as np
 import scipy.stats as stats
 from matplotlib.lines import Line2D
 
-
 plt.figure(figsize=(12, 7))
 
 files = [
