@@ -4,7 +4,6 @@ import time
 
 import rebop
 
-
 alphaA = 50
 alphapA = 500
 alphaR = 0.01

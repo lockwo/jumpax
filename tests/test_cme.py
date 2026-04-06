@@ -52,7 +52,7 @@ class TestProbabilityConservation(unittest.TestCase):
     def test_probability_sums_to_one(self):
         for t in [0.1, 0.5, 1.0, 5.0, 10.0]:
             p_t = jx.solve_cme(self.Q, self.p0, t)
-            self.assertAlmostEqual(jnp.sum(p_t), 1.0, places=4)
+            self.assertAlmostEqual(float(jnp.sum(p_t)), 1.0, places=4)
 
     def test_probabilities_nonnegative(self):
         p0_mid = jnp.zeros(self.Q.shape[0]).at[5].set(1.0)
@@ -124,8 +124,8 @@ class TestMarginalDistribution(unittest.TestCase):
         marginal_0 = jx.marginal_distribution(p_t, cme_state, species=0)
         marginal_1 = jx.marginal_distribution(p_t, cme_state, species=1)
 
-        self.assertAlmostEqual(jnp.sum(marginal_0), 1.0, places=5)
-        self.assertAlmostEqual(jnp.sum(marginal_1), 1.0, places=5)
+        self.assertAlmostEqual(float(jnp.sum(marginal_0)), 1.0, places=5)
+        self.assertAlmostEqual(float(jnp.sum(marginal_1)), 1.0, places=5)
 
     def test_marginal_correct_length(self):
         max_counts = jnp.array([8, 12])

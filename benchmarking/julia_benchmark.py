@@ -3,7 +3,6 @@ import os
 import subprocess
 import time
 
-
 results_with_compile = []
 results_no_compile = []
 
@@ -23,7 +22,8 @@ for n_traj in range(1, 102, 10):
     results_no_compile.append([n_traj, elapsed_no_compile])
 
     print(
-        f"n={n_traj}, with compile: {elapsed_with_compile:.4f}s, no compile: {elapsed_no_compile:.4f}s"
+        f"n={n_traj}, with compile: {elapsed_with_compile:.4f}s, "
+        f"no compile: {elapsed_no_compile:.4f}s"
     )
 
 os.makedirs("results", exist_ok=True)
