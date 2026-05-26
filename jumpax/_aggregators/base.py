@@ -2,9 +2,9 @@ from abc import abstractmethod
 from typing import Generic, TypeVar
 
 import equinox as eqx
+from ihoop.eqx import AbstractStrictModule
 from jaxtyping import Array, Bool, Int, Key
 
-from ihoop.eqx import AbstractStrictModule
 from .._custom_types import Args, Info, JumpState, RealScalarLike, SolverState, U
 
 _SolverState = TypeVar("_SolverState", bound=SolverState)

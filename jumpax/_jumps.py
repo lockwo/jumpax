@@ -3,11 +3,11 @@ from collections.abc import Callable
 from typing import Generic, TypeAlias, TypeVar
 
 import jax
+from ihoop.eqx import AbstractStrictModule
 from jax import numpy as jnp
 from jax.scipy.special import gammaln
 from jaxtyping import Array, Float, Int, Key
 
-from ihoop.eqx import AbstractStrictModule
 from ._custom_types import Args, JumpState, Rate, RealScalarLike, U
 
 _Rate = TypeVar("_Rate", bound=Rate)
