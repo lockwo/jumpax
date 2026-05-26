@@ -3,31 +3,31 @@
 from abc import abstractmethod
 from unittest import TestCase
 
-from jumpax._custom_meta import AbstractStrictModule
+from ihoop.eqx import AbstractStrictModule
 
 
 class StrictMetaTest(TestCase):
     def test_concrete_class_is_final(self):
         """Concrete strict classes cannot be subclassed."""
 
-        class AbstractFoo(AbstractStrictModule, strict=True):
+        class AbstractFoo(AbstractStrictModule):
             @abstractmethod
             def bar(self):
                 raise NotImplementedError
 
-        class Foo(AbstractFoo, strict=True):
+        class Foo(AbstractFoo):
             def bar(self):
                 return 42
 
         with self.assertRaises(TypeError, msg="Concrete classes must be final"):
 
-            class SubFoo(Foo, strict=True):
+            class SubFoo(Foo):
                 pass
 
     def test_abstract_class_cannot_be_instantiated(self):
         """Abstract strict classes cannot be instantiated."""
 
-        class AbstractFoo(AbstractStrictModule, strict=True):
+        class AbstractFoo(AbstractStrictModule):
             @abstractmethod
             def bar(self):
                 raise NotImplementedError
