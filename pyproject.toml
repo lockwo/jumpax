@@ -24,7 +24,7 @@ urls = { repository = "https://github.com/lockwo/jumpax" }
 
 dependencies = [
     "equinox>=0.11.2",
-    "ihoop>=0.1.1",
+    "ihoop[equinox]>=0.1.3",
     "diffrax>=0.6.0",
 ]
 

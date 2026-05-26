@@ -7,7 +7,7 @@ from jax import numpy as jnp
 from jax.scipy.special import gammaln
 from jaxtyping import Array, Float, Int, Key
 
-from ._custom_meta import AbstractStrictModule
+from ihoop.eqx import AbstractStrictModule
 from ._custom_types import Args, JumpState, Rate, RealScalarLike, U
 
 _Rate = TypeVar("_Rate", bound=Rate)

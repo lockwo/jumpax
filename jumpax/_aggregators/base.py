@@ -4,7 +4,7 @@ from typing import Generic, TypeVar
 import equinox as eqx
 from jaxtyping import Array, Bool, Int, Key
 
-from .._custom_meta import AbstractStrictModule
+from ihoop.eqx import AbstractStrictModule
 from .._custom_types import Args, Info, JumpState, RealScalarLike, SolverState, U
 
 _SolverState = TypeVar("_SolverState", bound=SolverState)
