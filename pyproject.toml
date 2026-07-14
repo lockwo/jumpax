@@ -42,13 +42,16 @@ testing = [
     "pyright==1.1.408",
 ]
 docs = [
-    "mkdocs>=1.5.0",
-    "mkdocs-material>=9.0.0",
-    "mkdocstrings[python]>=0.24.0",
-    "mkdocs-ipynb>=0.1.0",
-    "mkdocs-include-exclude-files>=0.0.1",
-    "hippogriffe>=0.2.0",
+    "griffe==1.7.3",
+    "hippogriffe==0.2.2",
+    "mkdocs==1.6.1",
+    "mkdocs-include-exclude-files==0.1.0",
+    "mkdocs-ipynb==0.1.1",
+    "mkdocs-material==9.6.7",
+    "mkdocstrings==0.28.3",
+    "mkdocstrings-python==1.16.8",
     "pygments<2.20",
+    "pymdown-extensions==10.14.3",
 ]
 
 [tool.setuptools]

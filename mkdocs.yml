@@ -4,6 +4,7 @@ theme:
         - navigation.sections
         - toc.integrate
         - header.autohide
+        - content.code.copy
     palette:
         - scheme: default
           primary: white
